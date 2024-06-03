@@ -1,0 +1,38 @@
+.btn {
+    border: none; 
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    height: 43px;
+    width: 196px;
+    border-radius: 50px;
+}
+
+.btn__subscribe_green {
+    background-color: #0DBC91;
+    transition: background-color 0.3s; 
+}
+
+.btn__subscribe_green:hover {
+    background-color: #00D29F;
+}
+
+.btn__details {
+    background-color: white;
+    color:  #0DBC91;
+    border: 1px solid #0DBC91;
+    transition: background-color 0.3s; 
+}
+
+.btn__details:hover {
+    background-color: #0DBC91;
+    color:  white;
+    border: 2px solid #0DBC91;
+}
+
+.btn__subscribe_white {
+    background-color: white;
+    color:  #1FA181;
+    font-weight: bold;
+}

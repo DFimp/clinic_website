@@ -27,6 +27,12 @@ async function loadImagemin() {
     imageminPngquant = imageminPngquantModule.default;
 }
 
+gulp.task('fonts', () => {
+    return gulp.src('src/fonts/**/*')
+        .pipe(gulp.dest('dist/fonts'))
+        .pipe(browserSync.stream());
+});
+
 async function styles() {
     if (!autoprefixer) {
         await loadAutoprefixer();
@@ -74,7 +80,7 @@ gulp.task('php', () => {
 });
 
 gulp.task('config', () => {
-    return gulp.src('config.php')
+    return gulp.src('config.php', { allowEmpty: true })
         .pipe(gulp.dest('dist'))
         .pipe(browserSync.stream());
 });
@@ -102,9 +108,10 @@ gulp.task('serve', () => {
     gulp.watch('src/*.php', gulp.series('php'));
     gulp.watch('config.php', gulp.series('config'));
     gulp.watch('vendor/**/*', gulp.series('composer'));
+    gulp.watch('src/fonts/**/*', gulp.series('fonts'));
     gulp.watch('dist/*.html').on('change', browserSync.reload);
     gulp.watch('dist/*.php').on('change', browserSync.reload);
 });
 
-gulp.task('default', gulp.series(styles, 'scripts', 'html', 'images', 'php', 'config', 'composer', 'serve'));
+gulp.task('default', gulp.series(styles, 'scripts', 'html', 'images', 'php', 'config', 'composer', 'fonts','serve'));
 

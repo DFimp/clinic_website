@@ -1,0 +1,110 @@
+.header {
+    .header__top {
+        display: grid;
+        grid-template-columns: 0.1 0.5fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        height: 65px;
+        padding: 0px 18px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        background-color: white;
+
+        .header__burger-btn {
+            grid-column: 1;
+            grid-row: 1 / 3;
+        }
+
+        .logo{
+            grid-column: 2;
+            grid-row: 1 / 3;
+        }
+
+        .phone-number {
+            grid-column: 3;
+            grid-row: 1;
+            font-size: 16px;
+            font-weight: bold;
+            place-self: end;
+        }
+
+        .address__city {
+            grid-column: 3;
+            grid-row: 2;
+            font-size: 13px;
+            place-self: start end;
+        }
+
+        .header__burger-btn {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            border: none;
+            background-color: white;
+        }
+    
+        .header__burger-btn span {
+            position: absolute;
+            width: 37px;
+            height: 4px;
+            background-color: #1FA181;
+            left: 4px;
+            top: 21px;
+            transition: transform .5s, opacity .5s;
+        }
+    
+        .header__burger-btn span:nth-child(1) {
+            transform: translateY(-13px);
+        }
+    
+        .header__burger-btn span:nth-child(3) {
+            transform: translateY(13px);
+        }
+
+        .icon__place, 
+        .address__street, 
+        .address__street, 
+        .icon__whatsapp,
+        .btn__subscribe_green {
+            display: none;
+        }
+    }
+
+    .header__bottom {
+        padding: 49px 19px;
+        position: fixed;
+        z-index: 3;
+        background-color: rgba(31, 160, 129, 0.9);;
+        width: 100%;
+        height: 100%;
+        top: 65px;
+        display: flex;
+        flex-direction: column;
+        gap: 39px;
+        left: -100%;
+        transition: transform .5s;
+    }
+}
+
+.header.open {
+    .header__burger-btn {
+        span:nth-child(1) {
+            transform: translateY(0) rotate(-45deg);
+        }
+
+        span:nth-child(2) {
+            opacity: 0;
+        }
+
+        span:nth-child(3) {
+            transform: translateY(0) rotate(45deg);
+        }
+    }
+    
+    .header__bottom {
+        transform: translateX(100%);
+    }
+}
