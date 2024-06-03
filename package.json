@@ -1,0 +1,30 @@
+{
+  "name": "clinic_website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.32.0",
+    "browser-sync": "^2.26.14",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-babel": "^8.0.0",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "gulp-imagemin": "^7.1.0",
+    "imagemin": "^8.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.0",
+    "gulp-connect-php": "^1.0.0",
+    "gulp-autoprefixer": "^8.0.0"
+  }
+}

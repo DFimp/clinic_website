@@ -1,0 +1,9 @@
+node_modules/
+images
+.vscode
+dist
+vendor
+composer.json
+composer.lock
+
+config.php
