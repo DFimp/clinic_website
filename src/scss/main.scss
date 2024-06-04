@@ -2,3 +2,9 @@
     position: relative;
     top: 65px;
 }
+
+@media (min-width: 1024px) {
+    .main {
+        position: static;
+    }
+}

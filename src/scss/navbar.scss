@@ -3,3 +3,13 @@
     flex-direction: column;
     gap: 10px
 }
+
+@media (min-width: 1024px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        width: 60%;
+        margin: auto;
+    }
+}
