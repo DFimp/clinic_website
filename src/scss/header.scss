@@ -21,6 +21,9 @@
         .logo{
             grid-column: 2;
             grid-row: 1 / 3;
+            color: #0DBC91;
+            font-weight: bold;
+            font-size: 35px;
         }
 
         .phone-number {
@@ -171,7 +174,7 @@
 
         .header__bottom {
             position: static;
-            background-color: #1FA181;;
+            background-color: #1FA181;
             width: 100%;
             height: 43px;
             justify-content: center;

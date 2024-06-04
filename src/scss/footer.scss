@@ -1,0 +1,44 @@
+.footer {
+    margin-top: 65px;
+    background-color: #08664F;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 42px 17px;
+    row-gap: 30px;
+
+    .logo {
+        color: white;
+        font-weight: bold;
+        font-size: 35px;
+    }
+
+    .navbar {
+        grid-column: 1;
+        gap: 15px
+    }
+
+    .footer-social {
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        gap: 20px;
+        place-self: center end;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer {
+        display:flex;
+        padding: 59px 20%;
+        margin-top: 0;
+    
+        .navbar {
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+        }
+        .footer-social {
+            gap: 15px
+        }
+    }
+}
