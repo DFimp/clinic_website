@@ -3,6 +3,5 @@ node_modules/
 dist
 vendor
 composer.json
-composer.lock
 
 config.php

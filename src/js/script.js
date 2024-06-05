@@ -63,4 +63,52 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.arrow-right').addEventListener('click', () => slideService(-1));
     
     updateService(currentIndex);
+
+    // модальное окно
+    const modal = document.getElementById('modal');
+    const closeBtn = document.getElementById('closeBtn');
+    const openBtns = document.querySelectorAll('.btn__subscribe_green, .btn__subscribe_white');
+
+    openBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            modal.style.display = 'block';
+        });
+    });
+
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+
+    // запрос на сервер
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+
+        fetch('send_mail.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data); 
+            if (data.includes('Сообщение отправлено')) {
+                modal.style.display = 'none';
+                form.reset(); 
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Ошибка при отправке сообщения');
+        });
+    });
 });
