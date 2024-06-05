@@ -37,14 +37,18 @@
             flex-direction: column;
             gap: 0;
 
-            .services__images {
+            .services__top {
                 width: 100%;
-                min-width: 340px;
-                min-height: 169px;
-                object-fit: cover;
-                border-radius: 5px 5px 0 0;
+                display: flex;
+
+                .services__image {
+                    min-width: 340px;
+                    min-height: 169px;
+                    object-fit: cover;
+                    border-radius: 5px 5px 0 0;
+                }
             }
-    
+            
             .services__info {
                 background-color: #E2F0EF;
                 height: 367px;
@@ -121,6 +125,71 @@
             padding-left: 20% !important;
             padding-right: 10% !important;
             padding-top: 6vw !important;
+        }
+    }
+
+    .services {
+        width: 60%;
+        margin: auto;
+        padding: 0 !important;
+        padding-top: 100px !important;
+
+        .services__content {
+            width: 100%;
+            position: relative !important;
+            height: 440px !important;
+            flex-direction: row-reverse !important;
+
+            .services__top {
+                position: absolute !important;
+                width: 60% !important;
+                z-index: 1;
+                
+                .services__image {
+                    width: 100% !important;
+                    height: 440px !important;
+                    border-radius: 0 5px 5px 0 !important;
+                }
+            }
+
+            .services__info {
+                position: absolute !important;
+                left: 0px;
+                width: 60% !important;
+                height: 440px !important;
+                border-radius: 5px 0 0 5px !important;
+                padding: 53px 20px 0 63px !important;
+                clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+                z-index: 2;
+
+                .services__info-title {
+                    font-size: 38px !important;
+                }
+
+                .services__info-for {
+                    font-size: 22px !important;
+                }
+
+                .services__info-list {
+                    padding: 16px 0 33px 19px !important; 
+    
+                    li {
+                        font-size: 16px;
+                        margin: 8px 0;
+                    }
+    
+                    li::marker {
+                        color: #1FA181;
+                        font-size: 20px;
+                    }
+                }
+
+                .services__price {
+                    .services__now-price {
+                        font-size: 20px !important;
+                    }
+                }
+            }
         }
     }
 }

@@ -92,3 +92,10 @@
         color: #C0C0C0;
     }
 }
+
+@media (min-width: 1024px) {
+    .pagination {
+        padding-top: 34px;
+        padding-bottom: 92px;
+    }
+}    
