@@ -45,13 +45,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function slideService(direction) {
-        servicesContent.style.transform = `translateX(${direction * 100}%)`;
+        servicesContent.style.transform = `translateX(${-direction * 100}%)`;
         
         setTimeout(() => {
             currentIndex = (currentIndex + direction + services.length) % services.length;
             updateService(currentIndex);
             servicesContent.style.transition = 'none';
-            servicesContent.style.transform = `translateX(${-direction * 100}%)`; 
+            servicesContent.style.transform = `translateX(${direction * 100}%)`; 
             setTimeout(() => {
                 servicesContent.style.transition = 'transform 0.5s'; 
                 servicesContent.style.transform = 'translateX(0)'; 
@@ -59,10 +59,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500);
     }
     
-    document.querySelector('.arrow-left').addEventListener('click', () => slideService(1));
-    document.querySelector('.arrow-right').addEventListener('click', () => slideService(-1));
+    document.querySelector('.arrow-left').addEventListener('click', () => slideService(-1));
+    document.querySelector('.arrow-right').addEventListener('click', () => slideService(1));
     
     updateService(currentIndex);
+
 
     // модальное окно
     const modal = document.getElementById('modal');
