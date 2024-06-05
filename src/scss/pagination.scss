@@ -1,0 +1,94 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    padding-top: 22px;
+    padding-bottom: 35px;
+
+    .arrow {
+        cursor: pointer;
+        position: relative;
+        width: 40px;
+        height: 25px;
+
+        div {
+            position: relative;
+            top: 8px;
+            width: 34px;
+            height: 4px;
+            background-color:  #E1E1E1; 
+            left: 0;
+            display: block;
+            border-radius: 3px; 
+            transition: background-color 0.3s; 
+        }
+
+        &.arrow-left div::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 4px;
+            background-color: #E1E1E1;
+            top: -4px;
+            left: -3px;
+            transform: rotate(-45deg);
+            border-radius: 3px; 
+            transition: background-color 0.3s; 
+        }
+
+        &.arrow-left div::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 4px;
+            background-color: #E1E1E1; 
+            top: 4px;
+            left: -3px;
+            transform: rotate(45deg);
+            border-radius: 3px; 
+            transition: background-color 0.3s;
+        }
+
+        &.arrow-right div::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 4px;
+            background-color: #E1E1E1;
+            top: -4px;
+            right: -3px;
+            transform: rotate(45deg);
+            border-radius: 3px; 
+            transition: background-color 0.3s; 
+        }
+
+        &.arrow-right div::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 4px;
+            background-color: #E1E1E1;
+            top: 4px;
+            right: -3px;
+            transform: rotate(-45deg);
+            border-radius: 3px;
+            transition: background-color 0.3s; 
+        }
+
+        &:hover div,
+        &:hover div::after,
+        &:hover div::before {
+            background-color:#0DBC91;
+        }
+    }
+
+    .pagination__text {
+        font-size: 20px;
+        padding: 0 35px;
+    }
+
+    .pagination__all-services {
+        color: #C0C0C0;
+    }
+}
